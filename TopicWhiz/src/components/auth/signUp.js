@@ -32,14 +32,14 @@ module.exports = React.createClass({
         />
 
         <TouchableOpacity style={styles.buttonContainer}>
-          <Text style= {styles.button}> Sign In</Text>
+          <Text style= {styles.button}> Sign Up</Text>
         </TouchableOpacity>
         <View style={styles.links}>
         <TouchableOpacity>
           <Text style={styles.link}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => this.props.navigator.push({name: 'signUp'})}>
-          <Text style={styles.link}>Sign Up</Text>
+        <TouchableOpacity onPress={() => this.props.navigator.pop()}>
+          <Text style={styles.link}>Already a member? Sign in</Text>
         </TouchableOpacity>
         </View>
       </View>
@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    padding: 40,
-    backgroundColor: 'teal'
+    padding: 40
   },
   input: {
     height: 50,
@@ -60,14 +59,12 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
     margin: 2,
-    backgroundColor: 'white',
     textAlign: 'center'
   },
   buttonContainer: {
     height: 50,
     justifyContent: 'center',
     borderColor: 'teal',
-    backgroundColor: 'gold',
     borderWidth: 1,
     borderRadius: 15,
     margin: 2
