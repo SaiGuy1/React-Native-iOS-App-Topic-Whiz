@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Navigatior
+  Navigator
 } from 'react-native';
 
-import SignIn from './src/components/aut/signIn';
+import SignIn from './components/auth/signIn';
 
 const routes = {
   signIn: SignIn
@@ -11,10 +11,12 @@ const routes = {
 
 module.exports = React.createClass({
   render() {
-    <Navigatior
+    return(
+    <Navigator
       initialRoute={{name: 'signIn'}}
       renderScene={this.renderScene}
     />
+    )
   },
 
   renderScene(route, navigator) {
@@ -22,7 +24,7 @@ module.exports = React.createClass({
 
     return (
       <Component
-        navigatior={navigator}
+        navigator={navigator}
       />
     )
   }
